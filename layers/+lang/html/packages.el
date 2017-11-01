@@ -221,6 +221,8 @@
         ;; TODO element close would be nice but broken with evil.
         )
 
+      (spacemacs|define-jump-handlers web-mode)
+
       ;; (defvar spacemacs--web-mode-ms-doc-toggle 0
       ;;   "Display a short doc when nil, full doc otherwise.")
 

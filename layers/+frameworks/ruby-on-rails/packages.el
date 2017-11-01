@@ -75,7 +75,11 @@
         (spacemacs/declare-prefix-for-mode mode "mrg" "goto"))
 
       ;; Ex-commands
-      (evil-ex-define-cmd "A" 'projectile-toggle-between-implementation-and-test))))
+      (evil-ex-define-cmd "A" 'projectile-toggle-between-implementation-and-test)
+
+      (when (configuration-layer/package-used-p 'web-mode)
+        (add-hook 'projectile-rails-mode-hook
+                  'ruby-on-rails//setup-web-mode-jump-handlers)))))
 
 (defun ruby-on-rails/init-feature-mode ()
   "Initialize Cucumber feature mode"
